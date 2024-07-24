@@ -1,0 +1,20 @@
+{
+  "name": "vite-study",
+  "version": "1.0.0",
+  "description": "学习自B站的Vite视频 视频笔记地址：https://github.com/passerecho/vite- Vite 官网：https://cn.vitejs.dev/",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "vite": "^5.3.4"
+  }
+}
