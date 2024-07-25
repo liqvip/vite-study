@@ -1,13 +1,11 @@
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f1f1f1;
-}
-
 .footer {
     width: 200px;
     height: 200px;
     background: deeppink;
+}
+
+.footer-content {
+    color: white;
+    font-size: 20px;
+    text-align: center;
 }
