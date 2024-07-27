@@ -12,5 +12,13 @@ export default defineConfig({
             hashPrefix: "hello",
             globalModulePaths: ["./componentB.module.css"],  // 代表你不想参与到css模块化的路径
         },
+        preprocessorOptions: { // key + config, key 代表预处理器的名称, config 代表对应的配置
+            less: {
+                math: "always", // 是否开启数学运算
+                globalVars: {
+                    mainColor: "red",
+                },
+            },
+        },
     },
 });
