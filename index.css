@@ -1,4 +1,9 @@
+:root {
+    --global-color: red;
+}
+
 html, body {
     width: 100%;
     background: blue;
+    color: var(--global-color);
 }
