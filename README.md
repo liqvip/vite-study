@@ -50,8 +50,10 @@ yarn add less # lessc的编译器
 
 less是可以定义变量的
 
-## postcss 的前世今生
+## 5. postcss 的前世今生
 1. 安装依赖
 ```
 npm i -D postcss-cli postcss
 ```
+
+## 5. Vite 配置文件中 Css 的配置流程(postcss 篇)

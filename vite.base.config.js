@@ -1,5 +1,6 @@
 import {defineConfig} from "vite";
 
+const postcssPresetEnv = require('postcss-preset-env');
 export default defineConfig({
     optimizeDeps: {
         exclude: [],    // 将指定数组中的依赖不进行依赖预构建
@@ -20,5 +21,10 @@ export default defineConfig({
                 },
             },
         },
+        postcss: {
+            plugins: [
+                postcssPresetEnv,
+            ],
+        }
     },
 });
