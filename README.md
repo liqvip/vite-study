@@ -57,3 +57,6 @@ npm i -D postcss-cli postcss
 ```
 
 ## 5. Vite 配置文件中 Css 的配置流程(postcss 篇)
+直接在css.postcss中进行配置, 该属性直接配置的就是postcss的配置
+
+## 6. 静态资源别名配置
