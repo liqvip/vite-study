@@ -7,6 +7,7 @@ export default defineConfig({
         alias: [
             {find: "@", replacement: path.resolve(__dirname, "./src")},
             {find: "@assets", replacement: path.resolve(__dirname, "./src/assets")},
+            {find: "@styles", replacement: path.resolve(__dirname, "./src/assets/styles")},
         ],
     },
     optimizeDeps: {
@@ -18,7 +19,7 @@ export default defineConfig({
             scopeBehaviour: "local", // 配置当前的模块化行为是模块化还是全局化 (有hash就是开启了模块化的一个标志, 因为他可以保证产生不同的hash值来控制我们的样式类名不被覆盖)
             // generateScopedName: "[name]__[local]--[hash:base64:5]", // 修改生成的类名规则
             hashPrefix: "hello",
-            globalModulePaths: ["./componentB.module.css"],  // 代表你不想参与到css模块化的路径
+            globalModulePaths: ["src/assets/styles/componentB.module.css"],  // 代表你不想参与到css模块化的路径
         },
         preprocessorOptions: { // key + config, key 代表预处理器的名称, config 代表对应的配置
             less: {

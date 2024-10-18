@@ -1,34 +1,56 @@
-学习自B站的Vite视频
-视频笔记地址：https://github.com/passerecho/vite-
-Vite 官网：https://cn.vitejs.dev/
+> 学习自B站的Vite视频
+1. 视频笔记地址：https://github.com/passerecho/vite-
+2. Vite 官网：https://cn.vitejs.dev/
 
 
-## 1. 使用 npm 安装一些依赖
+# 项目环境搭建
+不使用任何脚手架新建一个 Vite 项目，需要先安装 Node.js，然后使用 npm 安装 Vite。
+本项目本地安装的 node 版本为`v20.8.0`，npm 版本为`10.1.0`。
+
+1. 使用 npm 为本项目安装一些依赖
+```
 npm init -y 生成 package.json
 
 npm i lodash 安装 lodash
 
 npm i vite -D 安装 vite
+```
 
-## 2. Vite 对 Css 的处理以及对 Css 模块化的简单处理
+# Vite 对 CSS 的处理
+> Vite 支持 CSS、SCSS、LESS、Stylus 等样式文件的处理，同时支持 CSS 模块化。
 
-### Vite 对 Css 的处理
+## Vite 对 CSS 的简单处理
+默认情况下，Vite 会对项目中的 CSS 文件进行简单处理。以`index.css`文件为例。具体步骤如下。
+```css
+/* index.css */
+:root {
+    --global-color: red;
+}
+
+html, body {
+    width: 100%;
+    background: blue;
+    color: var(--global-color);
+}
+```
+
 1. 将 index.css 的内容复制到 style 标签，然后将 style 标签插入到 index.html 的 head
-![](./imgs/2-2.png)
-2. 将 index.css 中的内容全部替换成 js 脚本(方便热更新或者css模块化)， 同时设置Content-Type为js 从而让浏览器以JS脚本的形式来执行该css后缀的文件
-   ![](./imgs/2-1.png)
+   ![](./imgs/1-1.png)
 
-### Vite 对 Css 模块化的处理
+2. 将 index.css 中的内容全部替换成 js 脚本(方便热更新或者css模块化)， 同时设置Content-Type为js 从而让浏览器以JS脚本的形式来执行该css后缀的文件
+   ![](./imgs/1-2.png)
+
+## Vite 对 CSS 模块化的处理
 大概说一下原理，全部都是基于 node。
-1. module.css (module是一种约定, 表示需要开启css模块化)
+1. `*.module.css` (module是一种约定, 表示需要开启css模块化)
 2. 他会将你的所有类名进行一定规则的替换（将footer 替换成 _footer_1e0na_9） 
 3. 同时创建一个映射对象{ footer: "_footer_1e0na_9" } 
 4. 将替换过后的内容塞进style标签里然后放入到head标签中 (能够读到index.html的文件内容)
 5. 将 module.css 中的内容全部替换成了 js，并导出映射对象
    ![](./imgs/2-3.png)
 
-## 3. Vite 配置文件中 Css 的配置流程(modules 篇)
-在vite.config.js中我们通过css属性去控制整个vite对于css的处理行为
+# Vite 配置文件中 Css 的配置流程(modules 篇)
+> 在`vite.config.js`中我们通过`css`属性去控制整个vite对于css的处理行为
 
 - localConvention: 修改生成的配置对象的key的展示形式(驼峰还是中划线形式)
   ![](./imgs/3-1.png)

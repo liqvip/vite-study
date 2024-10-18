@@ -1,4 +1,4 @@
-import componentACss from "./componentA.module.css";
+import componentACss from "./assets/styles/componentA.module.css";
 
 console.log('componentACss', componentACss);
 const div = document.createElement('div');

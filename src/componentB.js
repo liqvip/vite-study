@@ -1,4 +1,4 @@
-import componentBCss from "./componentB.module.css";
+import componentBCss from "./assets/styles/componentB.module.css";
 
 console.log('componentBCss', componentBCss);
 const div = document.createElement('div');
