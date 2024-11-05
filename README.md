@@ -70,7 +70,7 @@ html, body {
 
 
 ## localConvention
-修改生成的映射对象 key 的命名形式(驼峰命名还是中划线命名)，不配置默认是中划线命名。
+修改生成的映射对象 key 的命名形式(驼峰命名还是中划线命名)，**不配置默认是中划线命名**。
 
 ```js
 // vite.base.config.js
@@ -91,14 +91,19 @@ export default {
   footerContent: footerContent
 };
 ```
-2. 当取值为`dashesOnly`时，生成的映射对象 key 为中划线命名。
+2. 当取值为`dashes`时，生成的映射对象 key 同时有驼峰和中横线。
 ```js
 // componentA.module.css
-
+export default {
+    footer: footer,
+    "footer-content": "_footer-content_udn28_7",
+    footerContent: footerContent
+};
 ```
 
 ## scopeBehaviour
 配置当前的模块化行为是模块化还是全局化 (有hash就是开启了模块化的一个标志, 因为他可以保证产生不同的hash值来控制我们的样式类名不被覆盖)
+，**默认值是`local`**。
 
 ## generateScopedName
 生成的类名的规则(可以配置为函数, 也可以配置成字符串规则: https://github.com/webpack/loader-utils#interpolatename)
